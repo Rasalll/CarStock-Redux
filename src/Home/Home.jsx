@@ -30,7 +30,7 @@ function Home() {
           <div>
             {
               product?.length > 0 ?
-                <Table striped bordered hover size='sm'>
+                <Table striped bordered hover size='xsm'>
                   <thead>
                     <tr className='row1'>
                       <th className='text-primary text-center p-3'>ID</th>
