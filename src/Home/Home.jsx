@@ -30,7 +30,7 @@ function Home() {
           <div>
             {
               product?.length > 0 ?
-                <Table striped bordered hover size='xsm'>
+                <Table striped bordered hover responsive='sm'>
                   <thead>
                     <tr className='row1'>
                       <th className='text-primary text-center p-3'>ID</th>
@@ -54,7 +54,7 @@ function Home() {
                             <Link to={`edit/${item.id}`} className='btn btn-info mt-1 me-2'>
                               <i className="fa-solid fa-pen-to-square" style={{ color: "#f1f8fe", }} />
                             </Link>
-                            <button className='btn btn-info mt-1 me-2' onClick={() => {dispatch(delet({id:item.id}))}}>
+                            <button className='btn btn-info mt-1 me-2' onClick={() => { dispatch(delet({ id: item.id })) }}>
                               <i className="fa-solid fa-trash" style={{ color: "#f0f5ff", }} />
                             </button>
                           </td>
