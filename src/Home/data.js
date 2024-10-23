@@ -1,20 +1,9 @@
 export const data=[
     {
         "id":1,
-        "name":"iPhone 16 Pro Max",
-        "cat":"Phone",
-        "price":"1,49,900",
-    },
-    {
-        "id":2,
-        "name":"Samsung Galaxy S24 Ultra",
-        "cat":"Phones",
-        "price":"1,21,999",
-    },
-    {
-        "id":3,
-        "name":"Apple MacBook Air",
-        "cat":"Laptop",
-        "price":"1,34,900",
+        "imageurl":"https://www.royaldrive.in/_next/image?url=https%3A%2F%2Froyaldrive-prod.s3.ap-south-1.amazonaws.com%2F937317710_(4).jpg&w=3840&q=75",
+        "model":"BENZ C CLASS",
+        "make":"MERCEDEZ",
+        "price":"15,0000 "
     }
 ]

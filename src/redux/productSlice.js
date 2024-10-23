@@ -13,11 +13,12 @@ const productSlice=createSlice({
         },
 
         edit:(state,action)=>{
-            const {id,name,cat,price}=action.payload
+            const {id,imageurl,model,make,price}=action.payload
             const pro = state.find(product=>product.id==id)
             if(pro){
-                pro.name=name;
-                pro.cat=cat;
+                pro.imageurl=imageurl;
+                pro.model=model;
+                pro.make=make;
                 pro.price=price
             }
             else{

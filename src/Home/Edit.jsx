@@ -7,9 +7,11 @@ function Edit() {
   const {id}=useParams()
   const product = useSelector((state) => state.productReducer)
   const existingProduct=product.find((item)=>item.id==id)
-  const [uname, setName] = useState(existingProduct ? existingProduct.name : '')
-  const [ucat, setCat] = useState(existingProduct ? existingProduct.cat : '')
-  const [uprice, setPrice] = useState(existingProduct ? existingProduct.price : '')
+  const [unimageurl, setImageurl] = useState(existingProduct ? existingProduct.imageurl : '')
+  const [unmodel, setModel] = useState(existingProduct ? existingProduct.model : '')
+  const [unmake, setMake] = useState(existingProduct ? existingProduct.make : '')
+  const [unprice, setPrice] = useState(existingProduct ? existingProduct.price : '')
+
 
 
   const dispatch=useDispatch()
@@ -20,41 +22,45 @@ function Edit() {
     dispatch(edit(
       {
         id:id,
-        name:uname,
-        cat:ucat,
-        price:uprice
+        imageurl:unimageurl,
+        model:unmodel,
+        make:unmake,
+        price:unprice
       }
     ))
-    navigate('/')
+    navigate('/home')
   }
   return (
 
     <>
-    
-      <div className='edit-bg d-flex vh-100 justify-content-center align-items-center mt-5'>
-        <div className='edit w-90 border p-5 shadow'>
-          <h3 className='text-light'> Edit Product</h3>
+      <div className='bg-dark d-flex vh-100 justify-content-center align-items-center '>
+        <div className='edit w-50   p-4 shadow rounded'>
+          <h1 className='text-primary mb-3'> Edit Stock Details</h1>
           <form onSubmit={handleUpdate}>
             <div>
-              <label htmlFor="name" className='text-light'>Name:</label>
-              <input value={uname} onChange={(e)=>setName(e.target.value)} type="text" name='name' className='form-control' placeholder='Enter Name' />
+              <label htmlFor="firstlook" className='text-dark '>Photo Url</label>
+              <input value={unimageurl} onChange={(e)=>setImageurl(e.target.value)} type="text" name='photourl' className='form-control  rounded p-3 shadow mb-2' placeholder='Enter Name' />
             </div>
             <div>
-              <label htmlFor="category" className='text-light'>Category:</label>
-              <input value={ucat} onChange={(e)=>setCat(e.target.value)} type="text" name='cat' className='form-control' placeholder='Enter Category' />
+              <label htmlFor="price" className='text-dark '>Model</label>
+              <input value={unmodel} onChange={(e)=>setModel(e.target.value)} type="text" name='model' className='form-control  rounded p-3 shadow mb-2' placeholder='Enter Category' />
             </div>
             <div>
-              <label htmlFor="price" className='text-light'>Price:</label>
-              <input value={uprice} onChange={(e)=>setPrice(e.target.value)} type="text" name='price' className='form-control' placeholder='Enter Price'/>
+              <label htmlFor="make" className='text-dark '>Make</label>
+              <input value={unmake} onChange={(e)=>setMake(e.target.value)} type="text" name='make' className='form-control  rounded p-3 shadow mb-2' placeholder='Enter Price'/>
+            </div>
+            <div>
+              <label htmlFor="price" className='text-dark '>Price</label>
+              <input value={unprice} onChange={(e)=>setPrice(e.target.value)} type="text" name='price' className='form-control  rounded p-3 shadow mb-2' placeholder='Enter Price'/>
             </div>
             <div className='d-flex justify-content-between mt-4'>
-              <Link to={"/"} className='btn btn-secondary '>Cancel</Link>
-              <button className='btn btn-primary '>Update</button>
+              <Link to={"/"} className='btn btn-danger '>Cancel</Link>
+              <button className='btn btn-success '>Update</button>
             </div>
           </form>
         </div>
-      </div>   
-       </>
+      </div> 
+             </>
   )
 }
 
