@@ -22,7 +22,8 @@ function Home() {
           <div>
             {
               stocks?.length > 0 ?
-                <Table className='table table-bordered table-striped table-hover table-responsive table-dark'>
+              <div className=' table-responsive-sm'>
+                <Table className='table table-bordered table-striped table-hover table-dark'>
                   <thead>
                     <tr className='row1'>
                     <th className='text-light text-center p-3'>Stock No</th>
@@ -62,6 +63,7 @@ function Home() {
 
                   </tbody>
                 </Table>
+                </div>
                 :
 
                 <h3>No products yet!!</h3>

@@ -11,7 +11,7 @@ function Landing() {
          style={{ objectFit: 'cover', height: '100%' }} />
  
      <div className='container ms-5 position-absolute text-light w-50' style={{ top: '50px' }}>
-         <h1 className=' text-light' style={{ fontSize: '50px',fontWeight:'100' }}>
+         <h1 className=' text-light animated-h1' style={{ fontSize: '50px',fontWeight:'100' }}>
              Drive Smart, Save Big <br />
              Shop <span className='text-primary'> Rasal's Cars</span> Today!
          </h1>
